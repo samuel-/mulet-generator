@@ -1,0 +1,33 @@
+<!-- simple html page -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulet Generator</title>
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="lines.js"></script>
+</head>
+<body>
+    <main>
+        <h1>Mulet Generator</h1>
+        <button class="button" id="updateButton" onclick="updateContent()" alt="Update Content"></button>
+        <div id="content"></div>
+    </main>
+    <script type="text/javascript">
+        const linesLength = lines.length;
+        function updateContent(){
+            // generate two differennt random numbers 
+            let i1 = Math.floor(Math.random() * linesLength);
+            let i2;
+            do {
+                i2 = Math.floor(Math.random() * linesLength);
+            } while (i2 === i1);
+            console.log(i1,i2)
+            let randomLine1 = lines[i1];
+            let randomLine2 = lines[i2];
+            document.getElementById("content").innerHTML = randomLine1 + "<br>" + randomLine2;
+        }
+    </script>
+</body> 
+</html>
