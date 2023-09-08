@@ -16,6 +16,14 @@
     </main>
     <script type="text/javascript">
         const linesLength = lines.length;
+        function getSample(s){
+            // return random element from array [of array]
+            if (Array.isArray(s)){
+                let i = Math.floor(Math.random() * s.length);
+                return getSample(s[i]);
+            }
+            else return s;
+        }
         function updateContent(){
             // generate two differennt random numbers 
             let i1 = Math.floor(Math.random() * linesLength);
@@ -23,9 +31,8 @@
             do {
                 i2 = Math.floor(Math.random() * linesLength);
             } while (i2 === i1);
-            console.log(i1,i2)
-            let randomLine1 = lines[i1];
-            let randomLine2 = lines[i2];
+            let randomLine1 = getSample(lines[i1]);
+            let randomLine2 = getSample(lines[i2]);;
             document.getElementById("content").innerHTML = randomLine1 + "<br>" + randomLine2;
         }
     </script>
