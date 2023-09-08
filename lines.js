@@ -17,10 +17,13 @@ const lines = [
     ],
     [
         'en sautant du trottoir je me suis cassé le mulet',
-        'un mulet n\'est pas qu\'ne mèche et bien plus qu\'une sauce escabèche',
+        [
+            'un mulet n\'est pas qu\'une mèche et bien plus qu\'une sauce escabèche',
+            'ici j\'hume cette mèche, là cette sauce escabèche',
+        ],
         [
             'nous en avions le mulet tout hérissé',
-            'ce mulet me herisse le poil',
+            'ce mulet me hérisse le poil',
         ],
         'les mulets muent lorsque ça ne va plus',
     ],
