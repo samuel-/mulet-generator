@@ -34,15 +34,39 @@ main {
   box-shadow: 0 0 5px 5px yellow inset, 0 0 5px 5px yellow;
   opacity: 0.4;
 } 
-#updateButton:hover::after { 
-  box-shadow: 0 0 5px 5px blueviolet inset, 0 0 20px 20px blueviolet;
-  opacity: 0.5;
+@media (hover: hover) {
+  #updateButton:hover::after { 
+    box-shadow: 0 0 5px 5px blueviolet inset, 0 0 20px 20px blueviolet;
+    opacity: 0.5;
+  }
+  #updateButton:active::after { 
+    box-shadow: 0 0 5px 5px blueviolet inset, 0 0 10px 10px blueviolet;
+    opacity: 0.8;
+  }
 }
-#updateButton:active::after { 
-  box-shadow: 0 0 5px 5px blueviolet inset, 0 0 10px 10px blueviolet;
-  opacity: 0.8;
+@media (hover: none) {
+  #updateButton:active::after { 
+    animation: shadow-active 0.2s;
+  }
 }
-  
+@keyframes shadow-active {
+  0% {
+    box-shadow: 0 0 5px 5px yellow inset, 0 0 5px 5px yellow;
+    opacity: 0.4;
+  }
+  15% {
+    box-shadow: 0 0 5px 5px blueviolet inset, 0 0 20px 20px blueviolet;
+    opacity: 0.5;
+  }
+  50% {
+    box-shadow: 0 0 5px 5px blueviolet inset, 0 0 10px 10px blueviolet;
+    opacity: 0.8;
+  }
+  100% {
+    box-shadow: 0 0 5px 5px yellow inset, 0 0 5px 5px yellow;
+    opacity: 0.4;
+  }
+}
 #content {
     font-size: 1.6em;
     margin: 10px;
